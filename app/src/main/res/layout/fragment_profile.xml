@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".fragment.ProfileFragment">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profile_icon" />
+
+        <TextView
+            android:id="@+id/change_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:backgroundTint="#f7c82f"
+            android:layout_marginLeft="10dp"
+            android:padding="4dp"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="#373538"
+            android:background="@drawable/profile_shape"
+            android:text="Change Image"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/username_column"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/username"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="username"
+        android:paddingLeft="8sp" />
+
+    <EditText
+        android:id="@+id/alamat_email"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/email"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="alamat email"
+        android:enabled="false"
+        android:paddingLeft="8sp"
+        android:paddingTop="4dp"
+        android:autofillHints="" />
+    </RelativeLayout>
+
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/user_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_toStartOf="@id/save_button"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#5bc8ac"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="User Setting" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#5bc8ac"
+            android:textSize="11sp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="save change" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/item_shape"
+        android:backgroundTint="@color/white"
+        android:elevation="100px"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/poppinsbold"
+                android:paddingBottom="20dp"
+                android:text="Riwayat Pembelian"
+                android:textSize="20dp" />
+
+            <RelativeLayout
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/persegi_shape"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center_horizontal"
+                android:clipToPadding="false">
+
+                <RelativeLayout
+                    android:id="@+id/item_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"/>
+
+                    <ImageView
+                        android:id="@+id/image_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/profile_icon" />
+
+                    <TextView
+                        android:id="@+id/nama_barang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textSize="10sp"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:layout_toEndOf="@id/image_icon"
+                        android:text="profile icon"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/image_harga"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_icon"
+                        android:layout_below="@id/nama_barang"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="10dp"
+                        android:text="Rp19.000"/>
+
+                    <TextView
+                        android:id="@+id/jumlah_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_icon"
+                        android:layout_below="@id/image_harga"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="10dp"
+                        android:text="1 item"/>
+
+                    <Button
+                        android:id="@+id/detail"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="150dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_toEndOf="@+id/jumlah_item"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Detail"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="330dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/item_start"
+                    android:clipToOutline="true"
+                    android:background="@color/yellow_504"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/persegi_shape"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:layout_gravity="center_horizontal"
+                android:clipToPadding="false">
+
+                <RelativeLayout
+                    android:id="@+id/item_mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp" />
+
+                    <ImageView
+                        android:id="@+id/image_icon2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/profile_icon" />
+
+                    <TextView
+                        android:id="@+id/nama_barang2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="10dp"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:layout_toRightOf="@id/image_icon2"
+                        android:text="profile icon" />
+
+                    <TextView
+                        android:id="@+id/image_harga2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_icon2"
+                        android:layout_below="@id/nama_barang2"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="10dp"
+                        android:text="Rp19.000"/>
+
+                    <TextView
+                        android:id="@+id/jumlah_item2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/image_icon2"
+                        android:layout_below="@id/image_harga2"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textSize="10dp"
+                        android:text="1 item"/>
+
+                    <Button
+                        android:id="@id/detail"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="150dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_toEndOf="@+id/jumlah_item2"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Detail"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="330dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/item_mid"
+                    android:background="@color/yellow_504" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

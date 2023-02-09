@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "421541627920",
+    "project_id": "e-yadnya",
+    "storage_bucket": "e-yadnya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421541627920:android:f94eda873bf02d2f0ce295",
+        "android_client_info": {
+          "package_name": "com.surya_yasa_antariksa.e_yadnya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421541627920-jne8hefp1ls5qq3f36s27iuubb2jpdag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.surya_yasa_antariksa.e_yadnya",
+            "certificate_hash": "a31fbdce7137a0ad66126350bd309bb8f499cf92"
+          }
+        },
+        {
+          "client_id": "421541627920-v1qrbbaeup5h1rcirk0a6k0eb9ft2ilo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmpqfKDYRgnalHMjthXbaBBxFtc3xgHf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421541627920-v1qrbbaeup5h1rcirk0a6k0eb9ft2ilo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

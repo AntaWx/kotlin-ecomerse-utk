@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#ECE7E7"
+    android:orientation="vertical"
+    tools:context=".DaftarAccountActivity"
+    android:background="#E3E8E9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:text="@string/daftar_account"
+        android:textSize="18pt"
+        android:textColor="#cca300"
+        android:layout_marginTop="50sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsregular"
+        android:gravity="center"
+        android:text="@string/daftar"
+        android:textSize="8pt"
+        android:textColor="#FBB80F" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/column_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/email"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="alamat email"
+            android:paddingLeft="8sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/column_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/password"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="password"
+            android:paddingLeft="8sp"
+            android:paddingTop="4dp"
+            android:inputType="textPassword"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/button_daftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#5bc8ac"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Daftar"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/garis"/>
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/google_btn"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="200dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsregular"
+                android:textColor="@color/yellow_203"
+                android:text="@string/ada_akun"/>
+
+            <TextView
+                android:id="@+id/text_masuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/yellow_103"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Masuk"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

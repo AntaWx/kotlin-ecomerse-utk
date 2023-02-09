@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <EditText
+        android:id="@+id/username_column"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/username"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="username"
+        android:paddingLeft="8sp"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/alamat_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/email"
+        android:fontFamily="@font/poppinsregular"
+        android:hint="alamat email"
+        android:paddingLeft="8sp"
+        android:paddingTop="4dp"
+        android:autofillHints="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_shape"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#5bc8ac"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Log out"/>
+    </LinearLayout>
+
+</LinearLayout>
