@@ -2,11 +2,13 @@ package com.surya_yasa_antariksa.e_yadnya
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.surya_yasa_antariksa.e_yadnya.databinding.ActivityDaftarAccountBinding
+import kotlinx.android.synthetic.main.activity_daftar_account.*
 import java.util.regex.Pattern
 
 class DaftarAccountActivity : AppCompatActivity() {
@@ -50,11 +52,27 @@ class DaftarAccountActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!isNetworkConnected(this)) {
+                Toast.makeText(this, "Tidak terhubung ke internet", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             daftarUserFirebase(email, password)
         }
         binding.textMasuk.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+
+        binding.buttonSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            when{
+                isChecked -> {
+                    binding.columnPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                }
+                else -> {
+                    binding.columnPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                }
+            }
         }
     }
 

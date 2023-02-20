@@ -6,17 +6,145 @@
     tools:context=".fragment.HomeFragment"
     android:backgroundTint="@color/black">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_marginTop="50dp">
 
         <TextView
+            android:id="@+id/produk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/isi_data"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/yellow_4S"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppinsbold"/>
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/poppinssemibold"
-            android:gravity="center"
-            android:text="Belum ada apa apa"/>
-    </LinearLayout>
+            android:layout_below="@id/produk"
+            android:background="@drawable/background_a"
+            android:layout_marginTop="50dp"
+            android:elevation="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/text_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Detail Pesanan"
+                android:textColor="@color/yellow_82f"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_foto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_detail"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="60dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Foto Barang"
+                android:textColor="@color/yellow_703" />
+
+            <ImageView
+                android:id="@+id/image_barang"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/text_detail"
+                android:layout_alignParentEnd="true"
+                android:layout_marginVertical="30dp"
+                android:layout_marginEnd="60dp"
+                android:layout_toStartOf="@id/text_foto"
+                android:background="@drawable/profile_icon" />
+
+            <TextView
+                android:id="@+id/text_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_barang"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Nama Barang"
+                android:textColor="@color/yellow_703" />
+
+            <Spinner
+                android:id="@+id/mySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_barang"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@id/text_nama"
+                android:background="@drawable/spinner_bg"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:entries="@array/mySpinnerItems" />
+
+            <TextView
+                android:id="@+id/jumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mySpinner"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="30dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Jumlah Barang"
+                android:textColor="@color/yellow_703" />
+
+            <EditText
+                android:id="@+id/edit_jumlah"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mySpinner"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="130dp"
+                android:background="@drawable/persegi_shape"
+                android:backgroundTint="@color/white"
+                android:elevation="10dp"
+                android:inputType="number"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/harga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jumlah"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="30dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Harga Barang"
+                android:textColor="@color/yellow_703" />
+
+            <TextView
+                android:id="@+id/price_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jumlah"
+                android:layout_alignParentEnd="true"
+                android:layout_marginVertical="30dp"
+                android:layout_marginStart="71dp"
+                android:layout_marginEnd="160dp"
+                android:layout_toStartOf="@id/harga"
+                android:fontFamily="@font/poppinsbold"
+                android:text="@string/price_text"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 </FrameLayout>

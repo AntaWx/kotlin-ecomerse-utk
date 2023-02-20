@@ -1,9 +1,12 @@
 package com.surya_yasa_antariksa.e_yadnya.fragment
 
 
+import android.Manifest
 import android.app.Activity.RESULT_OK
+import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
@@ -15,6 +18,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -30,8 +34,6 @@ public class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     lateinit var auth: FirebaseAuth
-    private lateinit var sPH: SharedPreference
-    private lateinit var buttonKeluar: Button
     lateinit var imgUri: Uri
 
     private val binding get() = _binding!!
@@ -119,13 +121,14 @@ public class ProfileFragment : Fragment() {
     }
 
     private fun goToCamera() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
-            activity?.packageManager?.let {
-                intent?.resolveActivity(it).also {
-                    startActivityForResult(intent, REQ_CODE)
+        requestCameraPermission()
+            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+                activity?.packageManager?.let {
+                    intent?.resolveActivity(it).also {
+                        startActivityForResult(intent, REQ_CODE)
+                    }
                 }
             }
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -163,5 +166,48 @@ public class ProfileFragment : Fragment() {
 
     companion object{
         const val REQ_CODE = 100
+        const val CAMERA_PERMISSION_CODE = 100
     }
+
+    private fun requestCameraPermission() {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            // Permission already granted, start camera intent
+            startCameraIntent()
+        } else {
+            // Permission not yet granted, request it
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_CODE)
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == CAMERA_PERMISSION_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, start camera intent
+                startCameraIntent()
+            } else {
+                // Permission denied, show a message or take appropriate action
+            }
+        }
+    }
+
+    private fun startCameraIntent() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
+            activity?.packageManager?.let {
+                intent?.resolveActivity(it).also {
+                    startActivityForResult(intent, REQ_CODE)
+                }
+            }
+        }
+    }
+
 }

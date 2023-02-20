@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,35 +10,40 @@
         android:background="#E3E8E9">
 
     <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/eyadnya"
         android:layout_width="match_parent"
         android:layout_height="55sp"
         android:fontFamily="@font/poppinsbold"
         android:gravity="center"
         android:text="@string/app_name"
         android:textSize="18pt"
-        android:textColor="#cca300"
-        android:layout_marginTop="50sp"/>
+        android:textColor="#cca300"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/lanjut"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/eyadnya"
         android:fontFamily="@font/poppinsregular"
-        android:gravity="center"
         android:text="@string/selamat_datang"
         android:textSize="8pt"
         android:textColor="#FBB80F" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lanjut"
         android:padding="30dp">
-
         <EditText
             android:id="@+id/clm_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/email"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
             android:hint="email"
             android:paddingLeft="8sp"
@@ -50,23 +55,37 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/password"
+            android:layout_below="@id/clm_email"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
             android:hint="password"
-            android:paddingLeft="8sp"
+            android:paddingStart="8sp"
             android:inputType="textPassword"
             android:paddingTop="4dp" />
 
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/password_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clm_email"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="20dp"/>
+
         <TextView
             android:id="@+id/lupa_password"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/clm_password"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/poppinssemibold"
-            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
             android:text="@string/lupa_password"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary"
+            tools:ignore="RtlSymmetry" />
 
         <Button
+            android:layout_below="@id/lupa_password"
             android:id="@+id/button_masuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,25 +95,29 @@
             android:text="Masuk" />
 
         <TextView
+            android:id="@+id/garis"
+            android:layout_below="@id/button_masuk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/garis" />
 
         <ImageButton
+            android:id="@+id/google"
+            android:layout_below="@id/garis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/google_btn" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="210dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
+            android:layout_below="@id/google"
+            android:layout_centerHorizontal="true">
             <TextView
+                android:id="@+id/belum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsregular"
@@ -103,14 +126,13 @@
 
             <TextView
                 android:id="@+id/button_daftar"
+                android:layout_toEndOf="@id/belum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="Daftar"
                 android:textColor="@color/yellow_103" />
-        </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

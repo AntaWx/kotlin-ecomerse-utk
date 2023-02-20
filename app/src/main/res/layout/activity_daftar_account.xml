@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,40 +10,44 @@
     android:background="#E3E8E9">
 
     <TextView
+        android:id="@+id/eyadnya"
         android:layout_width="match_parent"
         android:layout_height="55sp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/poppinsbold"
         android:gravity="center"
         android:text="@string/daftar_account"
         android:textSize="18pt"
-        android:textColor="#cca300"
-        android:layout_marginTop="50sp"/>
+        android:textColor="#cca300"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/lanjut"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/eyadnya"
         android:fontFamily="@font/poppinsregular"
-        android:gravity="center"
         android:text="@string/daftar"
         android:textSize="8pt"
         android:textColor="#FBB80F" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lanjut"
         android:padding="30dp">
-
         <EditText
             android:id="@+id/column_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:background="@drawable/email"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
-            android:hint="alamat email"
+            android:hint="email"
             android:paddingLeft="8sp"
-            android:autofillHints="" />
+            android:paddingTop="4dp" />
 
         <EditText
             android:id="@+id/column_password"
@@ -51,42 +55,70 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/password"
+            android:layout_below="@id/column_email"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppinsregular"
             android:hint="password"
-            android:paddingLeft="8sp"
-            android:paddingTop="4dp"
+            android:paddingStart="8sp"
             android:inputType="textPassword"
-            android:autofillHints="" />
+            android:paddingTop="4dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/button_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/column_email"
+            android:layout_alignStart="@+id/column_password"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="18dp" />
+
+        <TextView
+            android:id="@+id/lupa_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/column_password"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:paddingStart="5dp"
+            android:text="@string/lupa_password"
+            android:textColor="@color/primary"
+            tools:ignore="RtlSymmetry" />
 
         <Button
+            android:layout_below="@id/lupa_password"
             android:id="@+id/button_daftar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"
-            android:layout_marginTop="20dp"
             android:backgroundTint="#5bc8ac"
             android:fontFamily="@font/poppinssemibold"
-            android:text="Daftar"/>
+            android:text="Daftar" />
 
         <TextView
+            android:id="@+id/garis"
+            android:layout_below="@id/button_daftar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/garis"/>
+            android:background="@drawable/garis" />
 
         <ImageButton
+            android:id="@+id/google"
+            android:layout_below="@id/garis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/google_btn"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="200dp"
-            android:orientation="horizontal">
+            android:background="@drawable/google_btn" />
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:layout_below="@id/google"
+            android:layout_centerHorizontal="true">
             <TextView
+                android:id="@+id/sudah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsregular"
@@ -97,12 +129,12 @@
                 android:id="@+id/text_masuk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/sudah"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/yellow_103"
                 android:fontFamily="@font/poppinssemibold"
                 android:text="Masuk"/>
-        </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

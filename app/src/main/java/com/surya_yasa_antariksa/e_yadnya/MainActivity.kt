@@ -2,6 +2,7 @@ package com.surya_yasa_antariksa.e_yadnya
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -53,7 +54,23 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!isNetworkConnected(this)) {
+                Toast.makeText(this, "Tidak terhubung ke internet", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             loginUserFirebase(email, password)
+        }
+
+        binding.passwordSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            when{
+                isChecked -> {
+                    binding.clmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                }
+                else -> {
+                    binding.clmPassword.inputType = InputType.TYPE_CLASS_TEXT or  InputType.TYPE_TEXT_VARIATION_PASSWORD
+                }
+            }
         }
     }
 

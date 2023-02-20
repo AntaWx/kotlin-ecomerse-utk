@@ -55,6 +55,10 @@ class UserSettingActivity : AppCompatActivity() {
         editor?.apply()
 
         auth = FirebaseAuth.getInstance()
+        if (!isNetworkConnected(this)) {
+            Toast.makeText(this, "Tidak terhubung ke internet", Toast.LENGTH_SHORT).show()
+            return
+        }
         auth.signOut()
         val i = Intent(this, WelcomeActivity::class.java)
         val toast = Toast.makeText(this, "Berhasil Log Out", Toast.LENGTH_SHORT)

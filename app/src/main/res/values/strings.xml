@@ -15,4 +15,6 @@
     <string name="sampai">produk diperkirakan akan tiba pada</string>
     <string name="bayar">, silahkan lakukan pembayaran saat menerima produk anda</string>
     <string name="alamat_text">alamat pengiriman</string>
+    <string name="price_text">%s</string>
+    <string name="isi_data">ISI DATA BERIKUT JIKA INGIN MEMESAN BARANG</string>
 </resources>

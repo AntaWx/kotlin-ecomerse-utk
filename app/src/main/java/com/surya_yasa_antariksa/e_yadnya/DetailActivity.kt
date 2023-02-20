@@ -32,7 +32,9 @@ class DetailActivity : AppCompatActivity() {
         }
 
         val now = LocalDateTime.now()
-        val dateTime =  now.format(DateTimeFormatter.ofPattern("dd MMMM yyyy, HH:mm"))
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy, HH:mm")
+        val later = now.plusDays(3)
+        val dateTime =  "${now.format(formatter)} - ${later.format(formatter)}"
         val perjalananText = findViewById<TextView>(R.id.perjalanan_text)
         perjalananText.text = "${getString(R.string.sampai)} $dateTime"
     }
