@@ -141,6 +141,16 @@
                 android:text="@string/price_text"
                 android:textColor="@color/black" />
 
+            <Button
+                android:id="@+id/checkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_view"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Check Out"/>
+
         </RelativeLayout>
 
         </ScrollView>

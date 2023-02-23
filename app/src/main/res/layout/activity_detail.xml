@@ -77,6 +77,7 @@
             android:background="@drawable/location"/>
 
         <TextView
+            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/location_icon"
@@ -84,6 +85,115 @@
             android:layout_marginTop="7dp"
             android:fontFamily="@font/poppinsextra"
             android:text="@string/alamat_text"/>
+
+
+        <TextView
+            android:id="@+id/order_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Name:"
+            android:textStyle="bold"
+            android:layout_below="@id/location_icon"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/name_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/order_name"
+            android:layout_alignTop="@id/order_name"/>
+
+        <TextView
+            android:id="@+id/order_jumlah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Order:"
+            android:textStyle="bold"
+            android:layout_below="@id/order_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/jumlah_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/order_jumlah"
+            android:layout_alignTop="@id/order_jumlah"/>
+
+        <TextView
+            android:id="@+id/order_total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:"
+            android:textStyle="bold"
+            android:layout_below="@id/order_jumlah"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/order_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/order_total_label"
+            android:layout_alignTop="@id/order_total_label"/>
+
+        <TextView
+            android:id="@+id/order_status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            android:textStyle="bold"
+            android:layout_below="@id/order_total_label"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/order_status_label"
+            android:layout_alignTop="@id/order_status_label"/>
+
+        <TextView
+            android:id="@+id/order_items_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Items:"
+            android:textStyle="bold"
+            android:layout_below="@id/order_status_label"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/order_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/order_items_label"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:scrollbars="vertical" />
+
+
+
+
+        <LinearLayout
+            android:id="@+id/order_items_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/order_items_label"
+            android:layout_marginTop="8dp"></LinearLayout>
 
     </RelativeLayout>
 

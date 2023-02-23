@@ -2,6 +2,7 @@ package com.surya_yasa_antariksa.e_yadnya.fragment
 
 
 import android.Manifest
+import android.R
 import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
@@ -16,16 +17,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ListView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.squareup.picasso.Picasso
 import com.surya_yasa_antariksa.e_yadnya.*
+import com.surya_yasa_antariksa.e_yadnya.activity.DetailActivity
 import com.surya_yasa_antariksa.e_yadnya.databinding.FragmentProfileBinding
+import com.surya_yasa_antariksa.e_yadnya.model.OrderModel
 import db_helper.SharedPreference
 import java.io.ByteArrayOutputStream
 
@@ -37,12 +44,14 @@ public class ProfileFragment : Fragment() {
     lateinit var imgUri: Uri
 
     private val binding get() = _binding!!
+    private lateinit var orderListView: ListView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        orderListView = binding.orderList
         return binding.root
     }
 
@@ -131,6 +140,7 @@ public class ProfileFragment : Fragment() {
             }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when{
